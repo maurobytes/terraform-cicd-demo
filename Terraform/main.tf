@@ -52,7 +52,7 @@ resource "azurerm_postgresql_server" "demo_pgsql" {
   resource_group_name          = azurerm_resource_group.demo_rg[each.key].name
   sku_name                     = "GP_Gen5_2" # Tier + family + cores pattern (e.g. B_Gen4_1, GP_Gen5_8)
   create_mode                  = "Default"
-  version                      = "9.6"
+  version                      = "11"
   ssl_enforcement_enabled      = true
   administrator_login          = var.administrator_login
   administrator_login_password = var.administrator_login_password
