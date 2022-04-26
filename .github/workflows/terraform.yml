@@ -1,9 +1,11 @@
 name: 'Terraform Plan/Apply'
 
-on:
+on: 
   push:
     branches:
     - main
+    paths:
+      - 'Terraform/**'
   pull_request:
     branches:
     - main
@@ -36,7 +38,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
+    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
 
