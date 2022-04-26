@@ -1,8 +1,3 @@
-locals {
-  location     = "eastus2"
-  project_name = "demo"
-}
-
 # Resource group
 resource "azurerm_resource_group" "demo_rg" {
   for_each = local.environments
