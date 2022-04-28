@@ -97,12 +97,12 @@ ARM_TENANT_ID: ${{ secrets.SERVICE_PRINCIPAL_TENANT_ID }}
 ### Terraform Variables
 In order to deploy the infrastructure, you'll need to create some variables, on this example we need to pass the login username and password of a PostgreSQL server.
 
-Note that on [terraform.yml](.github/workflows/terraform.yml) we're creating two variables but not assigning any value to them. This is because we want to pass the values from the pipeline using secrets.
+Note that on [terraform.yml](Terraform/variables.tf) we're creating two variables but not assigning any value to them. This is because we want to pass the values from the pipeline using secrets.
 
 This could also be achieved generating a random string and storing it on key vault, but not covered on this demo.
 
 ```hcl
-# extract from .github/workflows/terraform.yml
+# extract from Terraform/variables.tf
 
 variable "administrator_login" {
   description = "The administrator login for the PostgreSQL server"
