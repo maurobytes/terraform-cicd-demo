@@ -82,9 +82,9 @@ Go ahead and create the following secrets and use the values from the previous s
 
 Guidance on [How to create a GitHub secret](https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md) 
 
-We use these secrets in [terraform.yml](.github\workflows\terraform.yml) to pass the credentials to Terraform.
+We use these secrets in [terraform.yml](.github/workflows/terraform.yml) to pass the credentials to Terraform.
 ```yml
-# extract from .github\workflows\terraform.yml
+# extract from .github/workflows/terraform.yml
 ARM_CLIENT_ID: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_ID }}
 ARM_CLIENT_SECRET: ${{ secrets.SERVICE_PRINCIPAL_CLIENT_SECRET }}
 ARM_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
@@ -94,12 +94,12 @@ ARM_TENANT_ID: ${{ secrets.SERVICE_PRINCIPAL_TENANT_ID }}
 ### Terraform Variables
 In order to deploy the infrastructure, you'll need to create some variables, on this example we need to pass the login username and password of a PostgreSQL server.
 
-Note that on [terraform.yml](.github\workflows\terraform.yml) we're creating two variables but not assigning any value to them. This is because we want to pass the values from the pipeline using secrets.
+Note that on [terraform.yml](.github/workflows/terraform.yml) we're creating two variables but not assigning any value to them. This is because we want to pass the values from the pipeline using secrets.
 
 This could also be achieved generating a random string and storing it on key vault, but not covered on this demo.
 
 ```hcl
-# extract from .github\workflows\terraform.yml
+# extract from .github/workflows/terraform.yml
 
 variable "administrator_login" {
   description = "The administrator login for the PostgreSQL server"
@@ -121,7 +121,7 @@ Go ahead and add two new secrets to your repo
 Once you have the secrets, you can also add them to the GitHub actions workflow as follows:
 
 ```yml
-# extract from .github\workflows\terraform.yml
+# extract from .github/workflows/terraform.yml
 TF_VAR_administrator_login: ${{ secrets.ADMINISTRATOR_LOGIN }}
 TF_VAR_administrator_login_password: ${{ secrets.ADMINISTRATOR_LOGIN_PASSWORD }}
 ```
