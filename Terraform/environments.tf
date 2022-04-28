@@ -8,9 +8,11 @@ locals {
         sku_name = "S1"
       }
     }
-    # "qa" = {
-    #   os_type  = "Linux"
-    #   sku_name = "P1v2"
-    # }
+    "qa" = {
+      app_service_plan = {
+        os_type  = "Linux"
+        sku_name = "P1v2"
+      }
+    }
   }
 }
