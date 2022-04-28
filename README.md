@@ -28,6 +28,9 @@ The objective of this repo is to demo and discuss the capabilities and advantage
 
 - Development experience (variables, conditional statements, control statements, etc.)
 - DevOps experience (if you want to create the entire pipeline)
+- Azure Subscription
+- Azure CLI installed on your local machine
+- Terraform installed (optional)
 
 ## Terraform setup on Azure
 ### Terraform State file (tfstate)
